@@ -1,0 +1,26 @@
+Some learning from this project: 
+
+# General information here about creating a REST API using Django and PostgreSQL
+    - Django is the frameowork used to create API while PostgreSQL is the relational database used for storage
+    - manage.py is a commant line utility that allows us to interact with Django project
+    - we create a basic Django Project at start. A project can then have multiple applications
+            - django-admin start project <name of the project>
+            - python manage.py runserver
+            - python manage.py startapp <the name of the app>
+
+# General steps
+ 1. Any new app you create must be added to project's settings.py file 
+ 2. Create models of app using classes in Python. Each class is a database table and each field is a database Field 
+ 3. Connect PostgreSQL we will use for database to Django. Add database to Settings.py
+ 4. Make migration files for the models (show changes that will be made to database) and push changes to database
+ 5. serialize models by adding searlize.py into app folder. With serialization of inputs done, time for API
+ 6. the business logic of writing API goes into views.py code
+ 7. Include API Urls in url folder in app and then also need to be added toproject urls so project knows how to handle URL requests
+
+
+To create an app within project, run python manage.py startapp EmployeeApp
+- create migration: python manage.py makemigrations EmployeeApp
+- once migrations look good, we can migrate our tables to database: python manage.py migrate EmployeeApp
+    - now database should be created
+
+# In PostgreSQL: know how to select query and insert data
